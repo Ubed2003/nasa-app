@@ -10,6 +10,8 @@ function App() {
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState()
   const [showModal, setShowModal] = useState(false);
+  console.log(data)
+
 
   function handleToggleModal() {
     setShowModal(!showModal);
@@ -22,12 +24,15 @@ function App() {
           const res = await fetch(url)
    const  apiData = await res.json()
    setData(apiData)
+
         }
+        
         catch(err){
           console.log(err.message)
         }
           }
           fetchApiData()
+
   }, []);
   return (
     <>
